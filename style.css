@@ -6,17 +6,62 @@ body{
     height: 100%;
 }
 .pop{
-    /*visibility: hidden;*/
+    visibility: hidden;
     z-index: 3;
     display: block;
     position: absolute;
     -webkit-box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
     -moz-box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
     box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
+    
 }
 #tworz-zadanie{
-    width: 15%;
-    height: 12%;
+    text-align: center;
+    width: 28%;
+    height: auto;
 }
+.task{
+    width: 20%;
+    height: 150px;
+    -webkit-box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
+    border-radius: 10% !important;
+    border-collapse: separate !important;
+}
+.task .task-color{
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid black;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
+}
+.task .task-name{
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: aliceblue;
+}
+.task .task-description{
+    margin-left: 4%;
+    width: 96%;
+    height: 46.5%;
+    background-color: aliceblue;
+    font-size: 12px;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+}
+.task .task-date-time{
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color: aliceblue;
+    font-size: 15px;
+    font-weight: bold;
+    
 
-
+}
