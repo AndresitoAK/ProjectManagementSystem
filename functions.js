@@ -1,9 +1,17 @@
 class App{
+    ajax = new XMLHttpRequest();
+    method = "POST";
+    url = "ajaxRequests.php";
+    asynchronously = true;
+    
+    tasks = [];
     dNumber = 0;
+    taskId = 0;
     createTask = document.getElementById('tworz-zadanie');
     constructor() {
-        
+        this.ajax.open(this.method, this.url, this.asynchronously);
     }
+    
     dodajZadanie(){
         let x = this.dNumber;
         let tab = [document.getElementById('task-color').value, document.getElementById('task-name').value, document.getElementById('task-description').value, document.getElementById('task-date').value, document.getElementById('task-time').value];
@@ -47,14 +55,34 @@ class App{
         divTaskDateTime.textContent = taskDate + ' ' + taskTime;
         divTaskColor.style.backgroundColor = taskColor;
 
+        let deleteTaskBtn = document.createElement('button');
+        deleteTaskBtn.textContent = 'Delete';
+        deleteTaskBtn.classList.add('delete-task-btn');
+
         let parent = document.getElementById(`d${x}`);
         let div = document.createElement('div');
-        div.classList.add('task');
         
+        for (let i = 0; i < 999; i++) {
+            if (this.tasks[i] === undefined) {
+                this.taskId = i;
+                this.tasks[i] = [];
+                this.tasks[i].push(this.taskId);
+                break;
+                
+            }
+        }
+        div.classList.add('task');
+        div.id = `divTask${this.taskId}`;
+        deleteTaskBtn.id = `deleteTaskBtn${this.taskId}`;
+        deleteTaskBtn.onclick= function(){
+            div.remove();
+        }
+        divTaskColor.appendChild(deleteTaskBtn);
         div.appendChild(divTaskColor);
         div.appendChild(divTaskName);
         div.appendChild(divTaskDateTime);
         div.appendChild(divTaskDescription);
+        
         
 
         parent.appendChild(div);
@@ -85,6 +113,6 @@ class App{
         
         
     }
-
+    
 }
 let app = new App();

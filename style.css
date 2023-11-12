@@ -13,6 +13,8 @@ body{
     -webkit-box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
     -moz-box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
     box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
+    background-color: bisque;
+    border-radius: 10%;
     
 }
 #tworz-zadanie{
@@ -22,7 +24,7 @@ body{
 }
 .task{
     width: 20%;
-    height: 150px;
+    height: 160px;
     -webkit-box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
     -moz-box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
     box-shadow: 8px 8px 24px -7px rgba(66, 68, 90, 1);
@@ -48,7 +50,7 @@ body{
 .task .task-description{
     margin-left: 4%;
     width: 96%;
-    height: 46.5%;
+    height: 41.5%;
     background-color: aliceblue;
     font-size: 12px;
     border-bottom-right-radius: 20%;
@@ -64,4 +66,7 @@ body{
     font-weight: bold;
     
 
+}
+.task .delete-task-btn{
+    background-color: rgb(248, 104, 104);
 }
