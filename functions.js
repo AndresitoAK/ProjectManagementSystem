@@ -1,15 +1,13 @@
+
 class App{
-    ajax = new XMLHttpRequest();
-    method = "POST";
-    url = "ajaxRequests.php";
-    asynchronously = true;
+  
     
     tasks = [];
     dNumber = 0;
     taskId = 0;
     createTask = document.getElementById('tworz-zadanie');
     constructor() {
-        this.ajax.open(this.method, this.url, this.asynchronously);
+
     }
     
     dodajZadanie(){
@@ -84,10 +82,13 @@ class App{
         div.appendChild(divTaskDescription);
         
         
+        
 
         parent.appendChild(div);
-
+ 
+        $('#errors').load('dodajZadanieAjax.php', {taskId: this.taskId, taskName: teskName, taskDescription: taskDescription, taskColor: taskColor, taskDate: taskDate, taskTime: taskTime}); 
     }
+ 
     task(prm) {
         try{
             switch (prm) {

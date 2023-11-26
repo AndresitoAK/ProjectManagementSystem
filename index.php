@@ -1,5 +1,7 @@
 <?php
-include("ajaxRequest.php");
+if($_COOKIE['zalogowany']!=true){
+    header('location: reg.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,9 +10,10 @@ include("ajaxRequest.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage your tasks</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 <body>
+<div id="errors"></div>
     <section id="tworz-zadanie" class="pop">
         Wybierz kolor zadania: <input type="color" name="task-color" id="task-color"> <br/>
         Nazwa zadania: <input type="text" name="task-name" id="task-name"> <br/>
@@ -31,7 +34,11 @@ include("ajaxRequest.php");
         <div id="d3" class="divy">
             <button class="button-div" onclick="app.task(3)">Create a new task</button>
         </div>
+        
     </section>
+    
     <script src="functions.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jqueryFnc.js"></script>
 </body>
 </html>
