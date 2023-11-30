@@ -1,6 +1,8 @@
 <?php
-if($_COOKIE['zalogowany']!=true){
+if(!isset($_COOKIE['userId'])){
     header('location: reg.php');
+}else{
+    include('load-tasks.php');
 }
 ?>
 <!DOCTYPE html>
@@ -13,7 +15,7 @@ if($_COOKIE['zalogowany']!=true){
 
 </head>
 <body>
-<div id="errors"></div>
+
     <section id="tworz-zadanie" class="pop">
         Wybierz kolor zadania: <input type="color" name="task-color" id="task-color"> <br/>
         Nazwa zadania: <input type="text" name="task-name" id="task-name"> <br/>
@@ -25,20 +27,32 @@ if($_COOKIE['zalogowany']!=true){
     <section id="top-bar"></section>
     <section id="left-side-bar"></section>
     <section id="main-section">
+
         <div id="d1" class="divy">
             <button class="button-div" onclick="app.task(1)">Create a new task</button>
+            <?php
+                load_tasks(1);
+            ?>
         </div>
         <div id="d2" class="divy">
             <button class="button-div" onclick="app.task(2)">Create a new task</button>
+            <?php
+                load_tasks(2);
+            ?>
         </div>
         <div id="d3" class="divy">
             <button class="button-div" onclick="app.task(3)">Create a new task</button>
+            <?php
+                load_tasks(3);
+            ?>
         </div>
         
     </section>
-    
+    <div id="errors"></div>
     <script src="functions.js"></script>
     <script src="jquery.min.js"></script>
-    <script src="jqueryFnc.js"></script>
+
+    
+    
 </body>
 </html>

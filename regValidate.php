@@ -11,10 +11,20 @@ function headerLoc($location){
 }
 function queryDb($parm1,$parm2,$parm3=0,$parm4=0,$location){
     include('conn.php');
-    $stmt = $conn->prepare("INSERT INTO users (id,username, password) VALUES (NULL,:username, :password)");
+    $stmt = $conn->prepare("SELECT username FROM users where username = :username");
     $stmt->bindValue(':username',$parm1);
-    $stmt->bindValue(':password',password_hash($parm2,true));
     $stmt->execute();
+    if($stmt->rowCount()==0){
+        $stmt = $conn->prepare("INSERT INTO users (id,username, password) VALUES (NULL,:username, :password)");
+        $stmt->bindValue(':username',$parm1);
+        $stmt->bindValue(':password',$parm2);
+        $stmt->execute();
+    }else{
+        $_SESSION['loginErrorsRegister'] = 'Login is occupied';
+        headerLoc('reg.php');
+    }
+   
+
 
     headerLoc($location);
 
@@ -44,7 +54,7 @@ function regValidate($login,$password,$cterms){
         $_SESSION['passwordErrorsRegister'] = "Password has unexpected characters. Please use only these special characters: !,@,#,$,%,^,&,*,?,+,-";
     }
     //query
-    queryDb($login,$password,0,0,'loginPage.php');
+    queryDb($login,$password,0,0,'log.php');
 }
 if (!isset($_POST['loginReg']) || !isset($_POST['passwordReg']) || !isset($_POST['termsReg'])){
     $_SESSION['errorRegister'] = 'Please enter all required fields';

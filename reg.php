@@ -36,5 +36,6 @@ session_start();
             ?>
         </div>
     </form>
+    <a href='log.php'><button>Log in</button></a>
 </body>
 </html>

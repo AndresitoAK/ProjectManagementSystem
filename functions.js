@@ -7,7 +7,7 @@ class App{
     taskId = 0;
     createTask = document.getElementById('tworz-zadanie');
     constructor() {
-
+        
     }
     
     dodajZadanie(){
@@ -86,7 +86,7 @@ class App{
 
         parent.appendChild(div);
  
-        $('#errors').load('dodajZadanieAjax.php', {taskId: this.taskId, taskName: teskName, taskDescription: taskDescription, taskColor: taskColor, taskDate: taskDate, taskTime: taskTime}); 
+        $('#errors').load('dodajZadanieAjax.php', {taskId: this.taskId, taskName: teskName, taskDescription: taskDescription, taskColor: taskColor, taskDate: taskDate, taskTime: taskTime, taskDiv: this.dNumber}); 
     }
  
     task(prm) {
