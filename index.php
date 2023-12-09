@@ -2,8 +2,9 @@
 if(!isset($_COOKIE['userId'])){
     header('location: reg.php');
 }else{
-    include('load-tasks.php');
+    
 }
+include('load-tasks.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,19 +32,20 @@ if(!isset($_COOKIE['userId'])){
         <div id="d1" class="divy">
             <button class="button-div" onclick="app.task(1)">Create a new task</button>
             <?php
-                load_tasks(1);
+                load_tasks('1');
+
             ?>
         </div>
         <div id="d2" class="divy">
             <button class="button-div" onclick="app.task(2)">Create a new task</button>
             <?php
-                load_tasks(2);
+                load_tasks('2');
             ?>
         </div>
         <div id="d3" class="divy">
             <button class="button-div" onclick="app.task(3)">Create a new task</button>
             <?php
-                load_tasks(3);
+                load_tasks('3');
             ?>
         </div>
         

@@ -9,7 +9,10 @@ class App{
     constructor() {
         
     }
-    
+    usunZadanie(idTaskDB, taskId){
+        //document.getElementById(`divTask${taskId}`).remove();
+        //$('#errors').load('usunZadanieAjax.php',{idTask:idTaskDB});
+    }
     dodajZadanie(){
         let x = this.dNumber;
         let tab = [document.getElementById('task-color').value, document.getElementById('task-name').value, document.getElementById('task-description').value, document.getElementById('task-date').value, document.getElementById('task-time').value];
@@ -72,9 +75,7 @@ class App{
         div.classList.add('task');
         div.id = `divTask${this.taskId}`;
         deleteTaskBtn.id = `deleteTaskBtn${this.taskId}`;
-        deleteTaskBtn.onclick= function(){
-            div.remove();
-        }
+        
         divTaskColor.appendChild(deleteTaskBtn);
         div.appendChild(divTaskColor);
         div.appendChild(divTaskName);
