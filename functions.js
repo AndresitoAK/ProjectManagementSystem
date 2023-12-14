@@ -10,8 +10,8 @@ class App{
         
     }
     usunZadanie(idTaskDB, taskId){
-        //document.getElementById(`divTask${taskId}`).remove();
-        //$('#errors').load('usunZadanieAjax.php',{idTask:idTaskDB});
+        document.getElementById(`divTask${taskId}`).remove();
+        $('#errors').load('usunZadanieAjax.php',{idTask:idTaskDB});
     }
     dodajZadanie(){
         let x = this.dNumber;
@@ -75,6 +75,7 @@ class App{
         div.classList.add('task');
         div.id = `divTask${this.taskId}`;
         deleteTaskBtn.id = `deleteTaskBtn${this.taskId}`;
+        
         
         divTaskColor.appendChild(deleteTaskBtn);
         div.appendChild(divTaskColor);

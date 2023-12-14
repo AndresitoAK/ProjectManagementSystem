@@ -12,11 +12,11 @@ include('load-tasks.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage your tasks</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-
+    
     <section id="tworz-zadanie" class="pop">
         Wybierz kolor zadania: <input type="color" name="task-color" id="task-color"> <br/>
         Nazwa zadania: <input type="text" name="task-name" id="task-name"> <br/>
@@ -25,7 +25,17 @@ include('load-tasks.php');
         Opis: <textarea name="task-description" id="task-description" cols="30" rows="10"></textarea> <br/>
         <input type="button" value="Dodaj zadanie" onclick="app.dodajZadanie()">
     </section>
-    <section id="top-bar"></section>
+
+    <section id="top-bar">
+        <section class="menuSelector">Your Projects</section>
+        <section class="menuSelector"></section>
+        <section class="menuSelector"></section>
+        <section class="menuSelector">More Info</section>
+        <section class="menuSelector">Settings</section>
+        <section class="menuSelectorAcnt">
+            <img src="assets/your_account.png" alt="your account" height="100%" width="5%">
+        </section>
+    </section>
     <section id="left-side-bar"></section>
     <section id="main-section">
 

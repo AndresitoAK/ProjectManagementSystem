@@ -1,12 +1,5 @@
 
 <?php
-$titles = [];
-$dates = [];
-$times = [];
-$descriptions = [];
-$div = [];
-$color = [];
-$id_tasks = [];
 $i = 0;
 
 function load_data($d, $i) {
@@ -38,7 +31,7 @@ function load_data($d, $i) {
         $divTaskDelBtn = $domObj->createElement('button', 'delete');
         $divTaskDelBtn->setAttribute('class', 'delete-task-btn');
         $divTaskDelBtn->setAttribute('id', "deleteTaskBtn$i");
-        
+        $divTaskDelBtn->setAttribute('onclick', "app.usunZadanie({$row['id']}, $i)");
 
         $divTaskColor->setAttribute('style', 'background-color:' . $row['color']);
         $divTaskColor->appendChild($divTaskDelBtn);
